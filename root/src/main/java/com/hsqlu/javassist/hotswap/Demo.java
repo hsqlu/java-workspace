@@ -22,13 +22,13 @@ public class Demo {
 
 //        CtClass clazz = pool.get("com.hsqlu.javassist.hotswap.HelloWorld");
 //        hs.reload("HelloWorld", clazz.toBytecode());
-        File newfile = new File("C:\\workspace\\java-workspace\\root\\target\\HelloWorld.class");
+        File newfile = new File("com/hsqlu/javassist/hotswap/logging/HelloWorld.class");
         byte[] bytes = new byte[(int)newfile.length()];
         new FileInputStream(newfile).read(bytes);
         System.out.println("** reload a logging version");
-        HotSwapper hs = new HotSwapper(8000);
+//        HotSwapper hs = new HotSwapper(8000);
 
-        hs.reload("com.hsqlu.javassist.hotswap.HelloWorld", bytes);
+//        hs.reload("com.hsqlu.javassist.hotswap.HelloWorld", bytes);
         new HelloWorld().print();
 //
         newfile = new File("C:\\workspace\\java-workspace\\root\\target\\classes\\com\\hsqlu\\javassist\\hotswap\\HelloWorld.class");
@@ -36,7 +36,7 @@ public class Demo {
         new FileInputStream(newfile).read(bytes);
         System.out.println("** reload the original version");
 
-        hs.reload("com.hsqlu.javassist.hotswap.HelloWorld", bytes);
+//        hs.reload("com.hsqlu.javassist.hotswap.HelloWorld", bytes);
         new HelloWorld().print();
     }
 }
